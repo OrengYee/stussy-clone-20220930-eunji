@@ -13,7 +13,7 @@ registerButton.onclick = () => {
     //JSON.stringify() => js객체를 json문자열로 변환.
     //JSON.parse()     => json문자열을 js객체로 변환.
 
-    let ajaxOption = {    
+    $.ajax({    
         async: false,                      //필수
         type: "post",                      //필수
         url: "/api/account/register",      //필수
@@ -22,11 +22,14 @@ registerButton.onclick = () => {
         dataType: "json",                  //json외 text 등을 사용할수 있지만 js
         success: (response) => {           //성공시에 실행될 메소드
             alert("회원가입 요청 성공");
+            console.log(response);
         },
         error: (error) => {                //실패시에 실행될 메소드
             alert("회원가입 요청 실패");
-        }
-    }
+            console.log(error.responseJSON.lastName);
 
-    $.ajax(ajaxOption);
+        }
+    });
+
+    
 }

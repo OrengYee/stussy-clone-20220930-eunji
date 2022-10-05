@@ -84,6 +84,7 @@ section {
 .login-return-link {
     display: flex;
     justify-content: center;
+    color: rgb(127,127,127);
 }
 
 .login-return-link {
@@ -91,5 +92,7 @@ section {
     justify-content: center;
     color: rgb(127,127,127);
 }
+
+
 
 
